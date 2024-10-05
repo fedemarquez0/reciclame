@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reciclando</title>
+  <link rel="icon" type="image/x-icon" href="dist/img/AdminLTELogo.png">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="puntos.html" class="nav-link">Home</a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown user-menu">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <img src="dist/img/user8-128x128.jpg" class="user-image img-circle elevation-2" alt="User Image">
+            <span class="d-none d-md-inline">Federico Marquez</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <!-- User image -->
+            <li class="user-header bg-primary">
+              <img src="dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+              <p>
+                Federico Marquez
+                <small>fedemarquez@mail.com</small>
+              </p>
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <a href="index.html" class="btn btn-block btn-default">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-success navbar-badge">2</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">2 Notificaciones</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Icono de un vaso reciclable-->
+              <i class="fas fa-glass-whiskey mr-2"></i> 100 puntos nuevos por u...
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-recycle mr-2"></i> 50 puntos nuevos por re...
+              <span class="float-right text-muted text-sm">6 horas</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">Ver todas las notificaciones</a>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="puntos.html" class="brand-link">
+        <img src="dist/img/AdminLTELogo.png" alt="Balcami Logo" class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-light">Reciclando</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- SidebarSearch Form -->
+        <div class="form-inline mt-3">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Buscar" aria-label="Buscar">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+
+            <li class="nav-header">Reciclado</li>
+            <li class="nav-item">
+              <a href="puntos.html" class="nav-link">
+                <i class="nav-icon far fa-calendar-alt"></i>
+                <p>
+                  Inicio
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="como_reciclar.html" class="nav-link">
+                <i class="nav-icon far fa-calendar-alt"></i>
+                <p>
+                  Como Reciclar?
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="reciclar.html" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+                <p>
+                  Reciclar
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">Vaso</li>
+            <li class="nav-item">
+              <a href="escanear_vaso.html" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+                <p>
+                  Escanear Vaso
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" id="contenido">
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Historial de Puntos</h1>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Card para mostrar puntos -->
+          <div class="card card-success">
+            <div class="card-header">
+              <h3 class="card-title">Puntos Acumulados</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-success"><i class="fas fa-recycle"></i></span>
+                    <div class="info-box-content">
+                      <span class="info-box-text">Puntos Totales</span>
+                      <span class="info-box-number" id="puntosTotales">1200</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- Line Chart para mostrar el histórico de puntos -->
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title">Historial de Puntos</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart">
+                <canvas id="lineChart"
+                  style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- Sección de logros -->
+          <div class="card card-warning">
+            <div class="card-header">
+              <h3 class="card-title">Tus Logros</h3>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><i class="fas fa-star"></i> ¡Eres un reciclador experto! Has alcanzado los 1000 puntos.</li>
+                <li><i class="fas fa-star"></i> Logro "Eco-Amigo": Has reciclado más de 50 kg de plástico.</li>
+                <li><i class="fas fa-star"></i> Has completado 10 reciclajes en el mes.</li>
+              </ul>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- Cómo ganar puntos -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">¿Cómo ganar puntos?</h3>
+            </div>
+            <div class="card-body">
+              <p>Gana puntos de las siguientes maneras:</p>
+              <ul>
+                <li><i class="fas fa-recycle"></i> Reciclando plástico, papel y residuos orgánicos.</li>
+                <li><i class="fas fa-check-circle"></i> Participando en campañas de reciclaje comunitarias.</li>
+                <li><i class="fas fa-clipboard-check"></i> Registrando tus reciclajes en nuestra plataforma.</li>
+              </ul>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- Preguntas frecuentes -->
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title">Preguntas Frecuentes</h3>
+            </div>
+            <div class="card-body">
+              <h5>¿Qué tipo de materiales puedo reciclar?</h5>
+              <p>Puedes reciclar plástico, papel, cartón, vidrio y residuos orgánicos.</p>
+
+              <h5>¿Cómo se calculan los puntos?</h5>
+              <p>Los puntos se calculan en base a la cantidad y el tipo de material reciclado.</p>
+
+              <h5>¿Puedo ver mi historial de reciclaje?</h5>
+              <p>Sí, puedes acceder a tu historial de reciclaje y puntos en tu perfil.</p>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- Botón "Reciclar Ahora" -->
+          <div class="row">
+            <div class="col text-center">
+              <a href="reciclar.html" class="btn btn-success btn-lg">Reciclar Ahora</a>
+            </div>
+          </div>
+
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+          <b>Version</b> 0.0.1
+        </div>
+        <strong>Copyright &copy; 2024 UBP.</strong> Todos los derechos reservados.
+      </footer>
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="plugins/toastr/toastr.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="plugins/jszip/jszip.min.js"></script>
+    <script src="plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+
+    <!-- Script para el gráfico de historial de puntos -->
+    <script>
+      $(function () {
+        // Definimos los datos del gráfico (ejemplo de historial)
+        var lineChartData = {
+          labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'], // Meses
+          datasets: [
+            {
+              label: 'Puntos Ganados',
+              backgroundColor: 'rgba(60,141,188,0.9)',
+              borderColor: 'rgba(60,141,188,0.8)',
+              pointRadius: 3,
+              pointHoverRadius: 5,
+              pointColor: '#3b8bba',
+              pointBackgroundColor: '#3b8bba',
+              data: [200, 300, 400, 350, 600, 750, 1200] // Puntos acumulados por mes
+            }
+          ]
+        };
+
+        // Opciones del gráfico
+        var lineChartOptions = {
+          maintainAspectRatio: false,
+          responsive: true,
+          scales: {
+            x: {
+              grid: {
+                display: false
+              }
+            },
+            y: {
+              grid: {
+                display: true
+              }
+            }
+          }
+        };
+
+        // Renderizar el gráfico
+        var lineChartCanvas = $('#lineChart').get(0).getContext('2d');
+        var lineChart = new Chart(lineChartCanvas, {
+          type: 'line',
+          data: lineChartData,
+          options: lineChartOptions
+        });
+      });
+    </script>
+
+</body>
+
+</html>
