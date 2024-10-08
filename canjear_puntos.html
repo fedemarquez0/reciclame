@@ -28,6 +28,31 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- ChartJS -->
   <script src="plugins/chart.js/Chart.min.js"></script>
+
+  <style>
+    /* Ajustar el tamaño de las imágenes a formato 16:9 y añadir bordes redondeados */
+    .product-img {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+    }
+
+    .card-body h5 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .current-points {
+        font-size: 2rem;
+        color: #28a745;
+        font-weight: bold;
+    }
+</style>
+
 </head>
 
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed">
@@ -168,145 +193,113 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" id="contenido">
-      <!-- Página de selección de reciclado -->
-      <div class="container my-4">
-        <h1 class="text-center">Seleccione el Tipo de Reciclado</h1>
-        <p class="text-center lead">
-          Elija el tipo de residuo que desea desechar y tírelo en el tacho correcto.
-        </p>
-
-        <!-- Formulario de selección de reciclado -->
-        <form id="form-reciclado">
-          <div class="row">
-            <!-- Basura General -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 text-center">
-              <div class="card h-100">
-                <img src="dist/img/BASURA_LOGO.png" class="card-img-top" alt="Tacho de basura">
-                <div class="card-body">
-                  <h5 class="card-title">Basura General</h5>
-                  <p class="card-text">Residuos no reciclables.</p>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="basura-general" name="reciclado[]"
-                      value="Basura General">
-                    <label class="form-check-label" for="basura-general">
-                      Seleccionar
-                    </label>
-                  </div>
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Canjear Puntos</h1>
                 </div>
-              </div>
             </div>
-
-            <!-- Orgánicos -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 text-center">
-              <div class="card h-100">
-                <img src="dist/img/ORGANICOS_LOGO.png" class="card-img-top" alt="Tacho de orgánicos">
-                <div class="card-body">
-                  <h5 class="card-title">Orgánicos</h5>
-                  <p class="card-text">Residuos biodegradables.</p>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="organicos" name="reciclado[]" value="Orgánicos">
-                    <label class="form-check-label" for="organicos">
-                      Seleccionar
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Plásticos -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 text-center">
-              <div class="card h-100">
-                <img src="dist/img/PLASTICO_LOGO.png" class="card-img-top" alt="Tacho de plásticos">
-                <div class="card-body">
-                  <h5 class="card-title">Plásticos</h5>
-                  <p class="card-text">Botellas y envases plásticos.</p>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="plasticos" name="reciclado[]" value="Plásticos">
-                    <label class="form-check-label" for="plasticos">
-                      Seleccionar
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Papel y Cartón -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 text-center">
-              <div class="card h-100">
-                <img src="dist/img/PAPEL_LOGO.png" class="card-img-top" alt="Tacho de papel">
-                <div class="card-body">
-                  <h5 class="card-title">Papel y Cartón</h5>
-                  <p class="card-text">Documentos, libros, revistas.</p>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="papel" name="reciclado[]"
-                      value="Papel y Cartón">
-                    <label class="form-check-label" for="papel">
-                      Seleccionar
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Botón para enviar selección, que abre el modal -->
-          <div class="text-center">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-              Enviar Selección
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Modal que muestra la selección -->
-      <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Confirmación de Reciclado</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Has seleccionado los siguientes tipos de reciclado:</p>
-              <ul id="lista-seleccionados"></ul>
-              <p>Presione el botón "Confirmar" cuando haya tirado todos los desechos en los tachos correspondientes.</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success" id="btnConfirmar">Confirmar</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
+        <!-- /.container-fluid -->
+    </section>
 
-      <!-- Script para capturar la selección y mostrarla en el modal -->
-      <script>
-        document.querySelector('button[data-target="#modal-default"]').addEventListener('click', function () {
-          const seleccionados = [];
-          const checkboxes = document.querySelectorAll('input[name="reciclado[]"]:checked');
-          const listaSeleccionados = document.getElementById('lista-seleccionados');
-          listaSeleccionados.innerHTML = '';  // Limpiar la lista anterior
+    <!-- Puntos actuales -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col-md-12 text-center">
+                    <h3>¡Tienes <span class="current-points">1200 puntos</span> disponibles!</h3>
+                </div>
+            </div>
+        </div>
 
-          checkboxes.forEach((checkbox) => {
-            seleccionados.push(checkbox.value);
-            const li = document.createElement('li');
-            li.textContent = checkbox.value;
-            listaSeleccionados.appendChild(li);
-          });
+        <!-- Productos para canjear -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Selecciona los productos para canjear</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Producto 1 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="product-img" style="background-image: url('dist/img/cafe.jpg');"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Café</h5>
+                                <p class="card-text">10.000 puntos</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="canjearCafe">
+                                    <label class="form-check-label" for="canjearCafe">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="product-img" style="background-image: url('dist/img/sandwich.jpg');"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Sandwich</h5>
+                                <p class="card-text">25.000 puntos</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="canjearSandwich">
+                                    <label class="form-check-label" for="canjearSandwich">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="product-img" style="background-image: url('dist/img/refresco.jpg');"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Refresco</h5>
+                                <p class="card-text">15.000 puntos</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="canjearRefresco">
+                                    <label class="form-check-label" for="canjearRefresco">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botón para confirmar canje -->
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-confirmar-canje">Confirmar Canje</button>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
 
-          if (seleccionados.length === 0) {
-            const li = document.createElement('li');
-            li.textContent = 'No has seleccionado ninguna opción.';
-            listaSeleccionados.appendChild(li);
-          }
-        });
-      </script>
+        <!-- Modal de Confirmación -->
+        <div class="modal fade" id="modal-confirmar-canje">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirmación de Canje</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Estás seguro de que deseas canjear los puntos por los productos seleccionados?</p>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnConfirmarCanje">Confirmar Canje</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
 
+    </section>
+      <!-- /.content -->
 
     </div>
     <!-- /.content-wrapper -->
@@ -350,14 +343,30 @@
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
 
+  <!-- Custom JS -->
   <script>
     $(document).ready(function () {
-        $('#btnConfirmar').click(function () {
-          alert('¡Gracias por reciclar! Has ganado 10 puntos.');
-          window.location.href = 'puntos.html'; // Redirección a la página de puntos
+        $('#btnConfirmarCanje').click(function () {
+            let productosSeleccionados = [];
+            if ($('#canjearCafe').is(':checked')) {
+                productosSeleccionados.push("Café");
+            }
+            if ($('#canjearSandwich').is(':checked')) {
+                productosSeleccionados.push("Sandwich");
+            }
+            if ($('#canjearRefresco').is(':checked')) {
+                productosSeleccionados.push("Refresco");
+            }
+
+            if (productosSeleccionados.length > 0) {
+                alert('Has canjeado: ' + productosSeleccionados.join(', ') + '. ¡Disfruta tus productos!');
+                window.location.href = 'puntos.html'; // Redirección a la página de puntos
+            } else {
+                alert('No has seleccionado ningún producto para canjear.');
+            }
         });
-      });
-  </script>
+    });
+</script>
 
 </body>
 
